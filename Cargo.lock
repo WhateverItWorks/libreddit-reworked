@@ -49,9 +49,9 @@ checksum = "41ed9a86bf92ae6580e0a31281f65a1b1d867c0cc68d5346e2ae128dddfa6a7d"
 
 [[package]]
 name = "askama"
-version = "0.12.0"
+version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "47cbc3cf73fa8d9833727bbee4835ba5c421a0d65b72daf9a7b5d0e0f9cfb57e"
+checksum = "b79091df18a97caea757e28cd2d5fda49c6cd4bd01ddffd7ff01ace0c0ad2c28"
 dependencies = [
  "askama_derive",
  "askama_escape",
