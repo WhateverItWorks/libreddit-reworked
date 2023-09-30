@@ -1,13 +1,34 @@
-version: "3.8"
+version: "3.7"
 
 services:
-  web:
-    build: .
+  libreddit:
+    build:
+      context: .
+      dockerfile: Dockerfile
     restart: always
-    container_name: "libreddit"
+    container_name: libreddit
+    hostname: libreddit
+    environment:
+      - LIBREDDIT_BANNER=Reddit users has been doing a protest against reddit API, I will try to maintain this myself if the main maintainers stop working on this project.
+      - LIBREDDIT_ROBOTS_DISABLE_INDEXING=on
+      - LIBREDDIT_PUSHSHIFT_FRONTEND=www.unddit.com
+      - LIBREDDIT_DEFAULT_THEME=black
+      - LIBREDDIT_DEFAULT_FRONT_PAGE=all
+      - LIBREDDIT_DEFAULT_LAYOUT=clean
+      - LIBREDDIT_DEFAULT_WIDE=off
+      - LIBREDDIT_DEFAULT_POST_SORT=new
+      - LIBREDDIT_DEFAULT_COMMENT_SORT=confidence
+      - LIBREDDIT_DEFAULT_SHOW_NSFW=on
+      - LIBREDDIT_DEFAULT_BLUR_NSFW=on
+      - LIBREDDIT_DEFAULT_USE_HLS=on
+      - LIBREDDIT_DEFAULT_HIDE_HLS_NOTIFICATION=on
+      - LIBREDDIT_DEFAULT_AUTOPLAY_VIDEOS=on
+      #- LIBREDDIT_DEFAULT_SUBSCRIPTIONS=
+      - LIBREDDIT_DEFAULT_HIDE_AWARDS=off
+      - LIBREDDIT_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION=off
     ports:
-      - 8080:8080
-    user: nobody
+      - '127.0.0.1:8013:8080'
+    user: 65534:65534
     read_only: true
     security_opt:
       - no-new-privileges:true
