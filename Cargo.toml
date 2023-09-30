@@ -15,7 +15,7 @@ regex = "1.7.1"
 serde = { version = "1.0.152", features = ["derive"] }
 cookie = "0.17.0"
 futures-lite = "1.12.0"
-hyper = { version = "0.14.23", features = ["full"] }
+hyper = { version = "0.14.27", features = ["full"] }
 hyper-rustls = "0.24.0"
 percent-encoding = "2.2.0"
 route-recognizer = "0.3.1"
